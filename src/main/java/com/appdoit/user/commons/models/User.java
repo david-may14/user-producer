@@ -1,4 +1,4 @@
-package com.appdoit.user.producer.model;
+package com.appdoit.user.commons.models;
 
 import lombok.*;
 
@@ -6,11 +6,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class User {
     private Integer userId;
     private String userName;
     private Integer age;
     private String gender;
-    private boolean ctiveUser;
+    private boolean activeUser;
     private Double rating;
 }

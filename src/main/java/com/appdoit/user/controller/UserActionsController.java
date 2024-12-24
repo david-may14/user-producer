@@ -1,8 +1,8 @@
-package com.appdoit.user.producer.controller;
+package com.appdoit.user.controller;
 
-import com.appdoit.user.producer.kafka.KafkaProducerApp;
+import com.appdoit.user.kafka.producer.KafkaProducerApp;
 import com.appdoit.user.commons.utils.KafkaUtils;
-import com.appdoit.user.producer.model.requiredtask.UserRequiredTask;
+import com.appdoit.user.kafka.producer.model.UserRequiredTask;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;

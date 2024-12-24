@@ -1,4 +1,4 @@
-package com.appdoit.user.producer.model.requiredtask;
+package com.appdoit.user.kafka.producer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

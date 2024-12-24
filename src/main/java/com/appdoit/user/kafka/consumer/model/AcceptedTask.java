@@ -1,4 +1,4 @@
-package com.appdoit.user.consumer.acceptedtask;
+package com.appdoit.user.kafka.consumer.model;
 
 import com.appdoit.user.commons.models.TaskLocation;
 import lombok.*;
