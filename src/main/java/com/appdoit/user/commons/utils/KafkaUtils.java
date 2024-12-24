@@ -1,6 +1,6 @@
-package com.appdoit.user.producer.kafka.utils;
+package com.appdoit.user.commons.utils;
 
-import com.appdoit.user.producer.model.requiredtask.UserRequiredTask;
+import com.appdoit.user.kafka.producer.model.UserRequiredTask;
 import io.smallrye.reactive.messaging.kafka.Record;
 import jakarta.enterprise.context.ApplicationScoped;
 

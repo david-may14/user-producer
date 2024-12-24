@@ -1,6 +1,6 @@
-package com.appdoit.user.consumer.kafka;
+package com.appdoit.user.kafka.consumer;
 
-import com.appdoit.user.consumer.acceptedtask.AcceptedTask;
+import com.appdoit.user.kafka.consumer.model.AcceptedTask;
 import io.smallrye.reactive.messaging.annotations.Blocking;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.extern.log4j.Log4j2;

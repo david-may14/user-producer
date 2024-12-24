@@ -1,13 +1,12 @@
-package com.appdoit.user.producer.model.requiredtask;
+package com.appdoit.user.commons.models;
 
 import lombok.*;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
 @Builder
+@ToString
 public class TaskLocation {
     private String location;
     private String description;
