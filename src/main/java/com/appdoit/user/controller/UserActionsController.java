@@ -1,7 +1,7 @@
 package com.appdoit.user.controller;
 
-import com.appdoit.user.kafka.producer.KafkaProducerApp;
 import com.appdoit.user.commons.utils.KafkaUtils;
+import com.appdoit.user.kafka.producer.KafkaProducerApp;
 import com.appdoit.user.kafka.producer.model.UserRequiredTask;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -16,16 +16,18 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 
 @Log4j2
 @Path("/user-actions")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class UserActionsController {
     @Inject
     private KafkaProducerApp kafkaProducerApp;
 
     @POST
     @Path("/send-task")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
+    //Should be only invoked by user to send a task
     @RequestBody(description = "Create a new task", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserRequiredTask.class)))
     public void sendTask(UserRequiredTask userRequiredTask) {
+        log.info("Task sent. We will assign a tasker in few minutes...");
         log.info(userRequiredTask);
         kafkaProducerApp.sendTask(KafkaUtils.createUniqueTask(userRequiredTask));
     }

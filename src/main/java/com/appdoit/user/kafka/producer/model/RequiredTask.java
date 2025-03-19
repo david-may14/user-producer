@@ -1,5 +1,6 @@
 package com.appdoit.user.kafka.producer.model;
 
+import com.appdoit.user.commons.models.Location;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,5 +22,6 @@ public class RequiredTask {
     private String taskStatus;
     private String taskType;
     // private TaskLocation taskLocation;
+    private Location location;
 
 }

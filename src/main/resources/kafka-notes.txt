@@ -1,18 +1,22 @@
 --Create topics--
-kafka-topics --bootstrap-server user_interactions_kf_bk:8088 --create --topic task-post-ch
+kafka-topics --bootstrap-server app-doit-broker:8088 --create --topic task-created
+kafka-topics --bootstrap-server app-doit-broker:8088 --create --topic task-accepted
 
 --Create console producer--
-kafka-console-producer --bootstrap-server user_interactions_kf_bk:8088  --topic task-creation
+kafka-console-producer --bootstrap-server app-doit-broker:8088  --topic task-created
+kafka-console-producer --bootstrap-server app-doit-broker:8088  --topic task-accepted
 
 --Crear consumidor
-kafka-console-consumer --bootstrap-server user_interactions_kf_bk:8088  --topic task-creation --from-beginning
+kafka-console-consumer --bootstrap-server app-doit-broker:8088  --topic task-created --from-beginning
+kafka-console-consumer --bootstrap-server app-doit-broker:8088  --topic task-accepted --from-beginning
 
 
 --Acceder a la consola de la VM de Kafka
-docker exec -it user_interactions_kf_bk bash
+docker exec -it app-doit-broker bash
 
 --Borrar un topico
-kafka-topics --delete --topic task_produced --bootstrap-server localhost:8088
+kafka-topics --delete --topic task-created --bootstrap-server localhost:8088
+kafka-topics --delete --topic task-accepted --bootstrap-server localhost:8088
 
 --Listar topicos
 kafka-topics --list --bootstrap-server localhost:8088

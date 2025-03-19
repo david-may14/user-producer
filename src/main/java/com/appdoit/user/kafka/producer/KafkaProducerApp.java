@@ -12,9 +12,8 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 @Log4j2
 public class KafkaProducerApp {
     @Inject
-    @Channel("task-creation-producer")
+    @Channel("task-created")
     private Emitter<Record<String, UserRequiredTask>> emitter;
-
 
 
     public void sendTask(Record<String, UserRequiredTask> recordValue) {
